@@ -13,4 +13,8 @@ class HomeTagManager(
     override fun logCloseScreen() {
         logger.log("home", "closed")
     }
+
+    override fun logClickButton() {
+        logger.log("home", "clicked in button")
+    }
 }

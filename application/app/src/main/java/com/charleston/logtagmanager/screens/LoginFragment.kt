@@ -18,13 +18,15 @@ class LoginFragment : Fragment(R.layout.fragment_login) {
 
         tagManager.login.logStartedScreen()
 
-        button2.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_main_navigation) }
+        button2.setOnClickListener {
+            tagManager.login.logLoginClick(txt_login.text.toString())
+            findNavController().navigate(R.id.action_loginFragment_to_main_navigation)
+        }
         button3.setOnClickListener { findNavController().navigate(R.id.action_loginFragment_to_registerFragment) }
     }
 
     override fun onStop() {
-        tagManager.login.logStartedScreen()
-
+        tagManager.login.logCloseScreen()
         super.onStop()
     }
 }

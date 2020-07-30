@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import com.charleston.logtagmanager.R
 import com.charleston.logtagmanager.tag.tagmanager.IEntranceTagManager
 import com.charleston.logtagmanager.tag.tagmanager.IHomeTagManager
+import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.ext.android.inject
 
 class HomeFragment : Fragment(R.layout.fragment_home) {
@@ -15,6 +16,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         tagManager.logStartedScreen()
+
+        button.setOnClickListener { tagManager.logClickButton() }
     }
 
     override fun onStop() {

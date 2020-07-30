@@ -29,5 +29,9 @@ class EntranceTagManager(
         override fun logCloseScreen() {
             logger.log("login", "closed")
         }
+
+        override fun logLoginClick(user: String) {
+            logger.log("login", "clicked in login using user $user")
+        }
     }
 }
